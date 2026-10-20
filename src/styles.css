@@ -1,0 +1,5 @@
+@import "tailwindcss" source(none);
+
+/* Scan application files only; references and generated CSS are excluded. */
+@source "../index.html";
+@source "../assets/main.js";
