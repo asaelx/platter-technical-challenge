@@ -13,3 +13,13 @@ The project is delivered as a static page with generated CSS included. Reviewers
 ## Review
 
 **Live preview:** the review link will be added here.
+
+## Fonts
+
+The page uses locally hosted fonts matching the Figma design:
+
+- [Source Serif Pro 3.001](https://github.com/adobe-fonts/source-serif/releases/tag/3.001R): Bold and Black for headings.
+- [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue): Regular for product titles and badges.
+- [Poppins](https://fonts.google.com/specimen/Poppins): Regular, Medium, and SemiBold for supporting text and controls.
+
+The WOFF2 files and original SIL Open Font License texts are included in [`assets/fonts`](assets/fonts). Bebas Neue and Poppins use the Latin webfont subsets provided by Google Fonts. No external font requests are needed to view the page.
