@@ -1,8 +1,20 @@
 # Platter technical challenge
 
+**Live preview:** [View the challenge](https://asaelx.github.io/platter-technical-challenge/).
+
 I'm Asael Chavez, and this project is my submission for the technical challenge as part of my application to Platter.
 
 The challenge is to recreate the supplied Figma featured collection across desktop and mobile, including product cards, secondary images on hover, mobile expansion, and a horizontal collection scrollbar.
+
+## Screenshots
+
+Desktop · 1920 × 787
+
+![Desktop featured collection with a horizontal product row and scrollbar](assets/screenshots/desktop.png)
+
+Mobile · 375 × 757, showing the initial four products
+
+![Mobile featured collection with four products and the Show More button](assets/screenshots/mobile.png)
 
 ## My approach
 
@@ -35,10 +47,6 @@ In a production project, I would confirm content discrepancies and promotion rul
 This submission uses static sample content to keep the HTML challenge self-contained. For a real storefront, I would render titles, product URLs, images, and prices from the commerce platform, such as Shopify, or a product API. Ratings and review counts would come from the connected review provider. The same underlying product data would serve every layout.
 
 Sale labels would follow actual pricing and promotion rules, including the applicable variant and currency; best-seller labels would follow the merchant's merchandising criteria. Placeholder values and badges here demonstrate presentation rather than a connection to a live catalog. Primary and secondary photos would belong to the same real product, with appropriate image alternatives and responsive sizes.
-
-## Review
-
-**Live preview:** [View the challenge](https://asaelx.github.io/platter-technical-challenge/).
 
 ## Challenge checklist
 
