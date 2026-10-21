@@ -18,7 +18,7 @@
             <img src="./assets/icons/arrow-right.svg" width="20" height="20" alt="">
           </a>
         </header>
-        <div class="collection-scroll" role="region" aria-label="Best-selling products" tabindex="0">
+        <div id="collection-viewport" class="collection-scroll" role="region" aria-label="Best-selling products" tabindex="0">
           <ul id="collection-products" class="product-list" role="list">
             <li class="product-item">
               <article class="product-card" aria-labelledby="product-headphones-title">
@@ -514,6 +514,19 @@
               </article>
             </li>
           </ul>
+        </div>
+        <div class="collection-scrollbar" hidden>
+          <div
+            class="collection-scrollbar-thumb focus-visible:outline-2 focus-visible:outline-offset-4"
+            role="scrollbar"
+            aria-label="Scroll best-selling products"
+            aria-controls="collection-viewport"
+            aria-orientation="horizontal"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            tabindex="0"
+          ></div>
         </div>
         <button
           class="collection-toggle focus-visible:outline-2 focus-visible:outline-offset-4"

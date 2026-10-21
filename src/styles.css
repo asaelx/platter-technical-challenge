@@ -62,6 +62,7 @@
   --color-sale: #5c7962;
   --color-collection-link: #5c553a;
   --color-off-white: #fffffa;
+  --color-scrollbar-track: #ddd6d7;
 }
 
 @layer components {
@@ -116,6 +117,48 @@
 
   .collection-scroll[data-animating] {
     overflow: hidden;
+  }
+
+  .collection-scroll[data-custom-scrollbar] {
+    scrollbar-width: none;
+  }
+
+  .collection-scroll[data-custom-scrollbar]::-webkit-scrollbar {
+    display: none;
+  }
+
+  .collection-scrollbar {
+    @apply relative mt-7 -mb-5 hidden h-11 touch-none select-none md:block;
+  }
+
+  .collection-scrollbar::before {
+    @apply absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-scrollbar-track;
+    content: "";
+  }
+
+  .collection-scrollbar-thumb {
+    @apply absolute top-0 left-0 h-full cursor-grab rounded-full;
+    width: var(--thumb-width, 100%);
+    transform: translateX(var(--thumb-offset, 0px));
+  }
+
+  .collection-scrollbar-thumb::before {
+    @apply absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 rounded-full bg-heading;
+    content: "";
+  }
+
+  @media (hover: hover) {
+    .collection-scrollbar-thumb:hover::before {
+      height: 6px;
+    }
+  }
+
+  .collection-scrollbar[data-dragging] .collection-scrollbar-thumb {
+    cursor: grabbing;
+  }
+
+  .collection-scrollbar[data-dragging] .collection-scrollbar-thumb::before {
+    height: 6px;
   }
 
   .collection-toggle {

@@ -26,6 +26,12 @@ The page remembers the mobile expanded or collapsed state when resizing between 
 
 Collapsed products are excluded from keyboard navigation and screen readers. Focus stays on the toggle when activated; if a resize would hide a focused product, focus moves to the toggle. With JavaScript disabled, all products remain available and the toggle is hidden.
 
+## Desktop scrolling
+
+Drag the scrollbar thumb or click the track to move through the collection. Track clicks center the thumb at the selected position. The thumb reflects the visible proportion of the collection and grows from 4px to 6px on hover or while dragging, including touch dragging. Trackpad and touch scrolling also work directly on the products.
+
+When the scrollbar is focused, arrow keys move one card, Page Up and Page Down move one visible collection width, and Home and End reach either end. Movement is immediate, and the scrollbar exposes its position to assistive technology. The control is hidden on mobile and when all products fit without scrolling. Without JavaScript, native scrolling remains available.
+
 ## Fonts
 
 The page uses locally hosted fonts matching the Figma design:
