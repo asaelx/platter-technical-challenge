@@ -6,9 +6,35 @@ The challenge is to recreate the supplied Figma featured collection across deskt
 
 ## My approach
 
-I'm using semantic HTML, Tailwind CSS, and Vanilla JavaScript, with an emphasis on matching the design, keeping the code readable, and making the interactions accessible by keyboard. The implementation respects reduced-motion preferences.
+I started by comparing the desktop and mobile references, identifying the shared visual rules and the places where product content differed. I preserved the typography, colors, spacing, and visual hierarchy, then made explicit decisions about content consistency and behavior between the supplied viewport sizes.
+
+I built the collection with semantic HTML, Tailwind CSS, and Vanilla JavaScript. Product cards use a consistent structure and shared styles, while JavaScript handles expansion and scrolling. The interaction work includes keyboard access, visible focus, reduced-motion preferences, and focus recovery when resizing changes which controls or products are visible. All products remain available if JavaScript is disabled.
+
+For performance, I supplied responsive WebP images with explicit dimensions and locally hosted WOFF2 fonts. This keeps image space reserved while assets load and avoids external image or font requests. I checked the supplied reference widths and intermediate sizes, including repeated interaction and resizing, to verify behavior beyond the two static designs.
 
 The project is delivered as a static page with generated CSS included. Reviewers can open `index.html` directly in a browser; no installation or build step is required.
+
+## Design decisions
+
+The Figma references contain a few differences between layouts and some sample content that does not describe the pictured products. I treated these as decisions to resolve explicitly and kept each product's information consistent across desktop and mobile.
+
+| Observation in Figma | Decision in this submission |
+| --- | --- |
+| Some titles do not match the images: headphones are labeled as a T-shirt, and sunglasses as a bottle. | I selected Unsplash photos and wrote full titles that describe the products shown. Related secondary photos may depict a different model because these are stock placeholders. |
+| The second title includes “Forest Green” on desktop but omits it on mobile. | Each product keeps its full title at every width, with wrapping handled by the layout. |
+| SAVE 15% appears on cards 2 and 4 on desktop, but cards 2 and 3 on mobile. | Sale badges stay on cards 2 and 4 at every width. BEST SELLER remains on all ten cards. |
+| Desktop ratings include partial stars, while mobile shows full stars. | Each product has one rating, including half stars where applicable, shared across layouts. |
+| Visible cards repeat the same $104.95 price and 1,234 review count. | I used varied sample prices, review counts, and ratings to exercise the cards with more representative content. These values remain the same across layouts. |
+
+The desktop scrollbar thumb also reflects the actual visible proportion of the ten-product collection, so its width changes with the viewport rather than remaining fixed to the reference artwork.
+
+In a production project, I would confirm content discrepancies and promotion rules with the designer or merchant before implementing them. A layout change should preserve the identity, price, rating, and promotion eligibility of the product being displayed.
+
+### Product data in a production store
+
+This submission uses static sample content to keep the HTML challenge self-contained. For a real storefront, I would render titles, product URLs, images, and prices from the commerce platform, such as Shopify, or a product API. Ratings and review counts would come from the connected review provider. The same underlying product data would serve every layout.
+
+Sale labels would follow actual pricing and promotion rules, including the applicable variant and currency; best-seller labels would follow the merchant's merchandising criteria. Placeholder values and badges here demonstrate presentation rather than a connection to a live catalog. Primary and secondary photos would belong to the same real product, with appropriate image alternatives and responsive sizes.
 
 ## Review
 
