@@ -19,7 +19,7 @@
           </a>
         </header>
         <div class="collection-scroll" role="region" aria-label="Best-selling products" tabindex="0">
-          <ul class="product-list" role="list">
+          <ul id="collection-products" class="product-list" role="list">
             <li class="product-item">
               <article class="product-card" aria-labelledby="product-headphones-title">
                 <a
@@ -515,6 +515,15 @@
             </li>
           </ul>
         </div>
+        <button
+          class="collection-toggle focus-visible:outline-2 focus-visible:outline-offset-4"
+          type="button"
+          aria-controls="collection-products"
+          aria-expanded="false"
+          hidden
+        >
+          Show More
+        </button>
       </section>
     </main>
   </body>

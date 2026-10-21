@@ -114,6 +114,15 @@
     }
   }
 
+  .collection-scroll[data-animating] {
+    overflow: hidden;
+  }
+
+  .collection-toggle {
+    @apply mt-3 flex h-[54px] w-full cursor-pointer items-center justify-center rounded-full bg-ink px-6 py-4;
+    @apply text-center text-base leading-[1.4] font-semibold tracking-[0.48px] text-off-white md:hidden;
+  }
+
   .product-list {
     @apply grid grid-cols-2 items-start gap-x-[11px] gap-y-3;
     @apply md:flex md:w-max md:gap-6;
