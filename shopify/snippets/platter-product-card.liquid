@@ -1,0 +1,131 @@
+{% doc %}
+  Renders catalog data with prices and savings from the same variant.
+
+  @param {product} product - Product to display.
+  @param {string} section_id - Section instance ID for unique accessible names.
+  @param {number} position - One-based card position within the section.
+{% enddoc %}
+
+{% liquid
+  assign card_variant = product.selected_or_first_available_variant
+  assign product_url = card_variant.url | default: product.url
+  assign title_id = 'PlatterProduct-' | append: section_id | append: '-' | append: product.id | append: '-' | append: position
+  assign primary_image = card_variant.featured_image | default: product.featured_image
+  assign primary_alt = primary_image.alt | default: product.title
+  assign secondary_image = nil
+
+  for image in product.images
+    if image.id != primary_image.id
+      assign secondary_image = image
+      break
+    endif
+  endfor
+
+  assign image_loading = 'lazy'
+  assign image_priority = 'auto'
+  if position == 1
+    assign image_loading = 'eager'
+    assign image_priority = 'high'
+  endif
+
+  assign savings_percent = 0
+  if card_variant.compare_at_price > card_variant.price
+    assign savings_percent = card_variant.compare_at_price | minus: card_variant.price | times: 100.0 | divided_by: card_variant.compare_at_price | round
+  endif
+
+  assign best_seller = product.metafields.custom.best_seller.value
+  assign rating = product.metafields.custom.demo_rating.value
+  assign review_count = product.metafields.custom.demo_review_count.value
+%}
+
+<article class="platter-product-card" aria-labelledby="{{ title_id }}">
+  <a href="{{ product_url | escape }}" class="platter-product-link" aria-labelledby="{{ title_id }}">
+    <div class="platter-product-media">
+      {% if primary_image != blank %}
+        {{
+          primary_image
+          | image_url: width: 710
+          | image_tag:
+            class: 'platter-product-image',
+            widths: '355, 710',
+            sizes: '(min-width: 48rem) 355px, calc((100vw - 59px) / 2)',
+            width: 355,
+            height: 355,
+            alt: primary_alt,
+            loading: image_loading,
+            decoding: 'async',
+            fetchpriority: image_priority
+        }}
+        {% if secondary_image != blank %}
+          {{
+            secondary_image
+            | image_url: width: 710
+            | image_tag:
+              class: 'platter-product-image platter-product-image--secondary',
+              widths: '355, 710',
+              sizes: '(min-width: 48rem) 355px, calc((100vw - 59px) / 2)',
+              width: 355,
+              height: 355,
+              alt: '',
+              loading: 'lazy',
+              decoding: 'async'
+          }}
+        {% endif %}
+      {% else %}
+        <div class="platter-product-placeholder" role="img" aria-label="No image available for {{ product.title | escape }}">
+          <span aria-hidden="true">Image unavailable</span>
+        </div>
+      {% endif %}
+
+      {% if best_seller == true or savings_percent > 0 %}
+        <div class="platter-product-badges">
+          {% if best_seller == true %}
+            <span class="platter-product-badge">BEST SELLER</span>
+          {% endif %}
+          {% if savings_percent > 0 %}
+            <span class="platter-product-badge platter-product-badge--sale">SAVE {{ savings_percent }}%</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <h3 id="{{ title_id }}" class="platter-product-title">{{ product.title | escape }}</h3>
+  </a>
+
+  {% if rating != blank %}
+    {% liquid
+      assign normalized_rating = rating.rating | times: 5.0 | divided_by: rating.scale_max
+      assign star_rating = normalized_rating | times: 2 | round | divided_by: 2.0
+    %}
+    <p class="platter-product-reviews">
+      <span class="platter-rating-stars" role="img" aria-label="Rated {{ normalized_rating }} out of 5 stars">
+        {% for star in (1..5) %}
+          {% assign half_star = star | minus: 0.5 %}
+          <span
+            class="platter-rating-star{% if star_rating < half_star %} platter-rating-star--empty{% elsif star_rating < star %} platter-rating-star--half{% endif %}"
+            aria-hidden="true"
+          ></span>
+        {% endfor %}
+      </span>
+      {% if review_count != blank %}
+        {% liquid
+          assign review_digits = review_count | append: '' | split: '' | reverse
+          capture reversed_count
+            for digit in review_digits
+              echo digit
+              assign group_position = forloop.index | modulo: 3
+              if group_position == 0 and forloop.last == false
+                echo ','
+              endif
+            endfor
+          endcapture
+          assign formatted_count = reversed_count | split: '' | reverse | join: ''
+        %}
+        <span>{{ formatted_count }} {% if review_count == 1 %}Review{% else %}Reviews{% endif %}</span>
+      {% endif %}
+    </p>
+  {% endif %}
+
+  <p class="platter-product-price">
+    <span class="platter-sr-only">Price: </span>{{ card_variant.price | money }}
+  </p>
+</article>

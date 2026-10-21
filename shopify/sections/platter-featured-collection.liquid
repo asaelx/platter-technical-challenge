@@ -1,0 +1,126 @@
+{% liquid
+  assign featured_collection = section.settings.collection
+  assign product_limit = section.settings.product_limit
+  assign product_count = featured_collection.products_count | default: 0 | at_most: product_limit
+  assign heading = section.settings.heading | strip
+
+  if heading == blank
+    assign heading = featured_collection.title | default: 'Best Sellers'
+  endif
+
+  assign heading_id = 'PlatterHeading-' | append: section.id
+  assign viewport_id = 'PlatterViewport-' | append: section.id
+  assign products_id = 'PlatterProducts-' | append: section.id
+%}
+
+<section
+  class="platter-collection"
+  aria-labelledby="{{ heading_id }}"
+  data-platter-collection
+>
+  <header class="platter-collection-header">
+    <h2 id="{{ heading_id }}" class="platter-collection-heading">{{ heading | escape }}</h2>
+    {% if featured_collection != blank and section.settings.link_label != blank %}
+      <a href="{{ featured_collection.url | escape }}" class="platter-collection-link">
+        <span>{{ section.settings.link_label | escape }}</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+          <path
+            d="M3.33333 10H16.6667M11.6667 15L16.6667 10L11.6667 5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    {% endif %}
+  </header>
+
+  {% if product_count > 0 %}
+    <div
+      id="{{ viewport_id }}"
+      class="platter-collection-scroll"
+      role="region"
+      aria-labelledby="{{ heading_id }}"
+      tabindex="0"
+    >
+      <ul id="{{ products_id }}" class="platter-product-list" role="list">
+        {% for product in featured_collection.products limit: product_limit %}
+          <li class="platter-product-item">
+            {% render 'platter-product-card', product: product, section_id: section.id, position: forloop.index %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="platter-collection-scrollbar" hidden>
+      <div
+        class="platter-collection-scrollbar-thumb"
+        role="scrollbar"
+        aria-label="Scroll {{ heading | escape }} products"
+        aria-controls="{{ viewport_id }}"
+        aria-orientation="horizontal"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        tabindex="0"
+      ></div>
+    </div>
+
+    {% if product_count > 4 %}
+      <button
+        class="platter-collection-toggle"
+        type="button"
+        aria-controls="{{ products_id }}"
+        aria-expanded="true"
+        hidden
+      >
+        Show More
+      </button>
+    {% endif %}
+  {% elsif request.design_mode and featured_collection == blank %}
+    <p class="platter-collection-empty">Choose a collection in the section settings to display its products.</p>
+  {% else %}
+    <p class="platter-collection-empty">No products available.</p>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Platter collection",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Collection link label",
+      "default": "Shop All Best Sellers"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "label": "Maximum products",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Platter collection"
+    }
+  ]
+}
+{% endschema %}
