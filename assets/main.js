@@ -1,3 +1,7 @@
+/**
+ * Adds mobile expansion while preserving the user's choice across layout changes.
+ * @param {HTMLElement} collection - Collection containing the products and toggle.
+ */
 function initializeCollectionExpansion(collection) {
   const viewport = collection.querySelector(".collection-scroll");
   const button = collection.querySelector(".collection-toggle");
@@ -7,6 +11,7 @@ function initializeCollectionExpansion(collection) {
     return;
   }
 
+  // Keep this breakpoint aligned with Tailwind's md layout in src/styles.css.
   const desktop = window.matchMedia("(min-width: 48rem)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let mobileExpanded = false;
@@ -28,6 +33,8 @@ function initializeCollectionExpansion(collection) {
   function render(animate = false) {
     const startHeight = viewport.getBoundingClientRect().height;
 
+    // Measure the current height before cancelling so rapid toggles start where
+    // the previous animation left off. Resizing also cancels stale dimensions.
     if (animation) {
       animation.cancel();
       animation = null;
@@ -73,12 +80,15 @@ function initializeCollectionExpansion(collection) {
     animation = currentAnimation;
 
     currentAnimation.finished.then(() => {
+      // Only the latest animation may restore visibility and interaction state.
       if (animation === currentAnimation) {
         animation = null;
         viewport.removeAttribute("data-animating");
         setProductVisibility(mobileExpanded);
       }
-    }).catch(() => {});
+    }).catch(() => {
+      // Cancelling an animation rejects finished; render already applies its replacement state.
+    });
   }
 
   button.addEventListener("click", () => {
@@ -102,6 +112,10 @@ function initializeCollectionExpansion(collection) {
   render();
 }
 
+/**
+ * Enhances native collection scrolling with a synchronized desktop scrollbar.
+ * @param {HTMLElement} collection - Collection containing the viewport and scrollbar.
+ */
 function initializeCollectionScrollbar(collection) {
   const viewport = collection.querySelector(".collection-scroll");
   const products = collection.querySelector(".product-list");
@@ -112,7 +126,9 @@ function initializeCollectionScrollbar(collection) {
     return;
   }
 
+  // Keep this breakpoint aligned with Tailwind's md layout in src/styles.css.
   const desktop = window.matchMedia("(min-width: 48rem)");
+  // Content scroll distance and thumb travel use different pixel ranges.
   let maxScroll = 0;
   let maxTravel = 0;
   let drag = null;
@@ -156,6 +172,8 @@ function initializeCollectionScrollbar(collection) {
     viewport.setAttribute("data-custom-scrollbar", "");
 
     const trackWidth = track.clientWidth;
+    // The thumb represents the visible fraction; progress maps content scroll
+    // onto the remaining track space rather than the full track width.
     const thumbWidth = trackWidth * viewport.clientWidth / viewport.scrollWidth;
     maxTravel = trackWidth - thumbWidth;
     const progress = Math.max(0, Math.min(1, viewport.scrollLeft / maxScroll));
@@ -171,6 +189,7 @@ function initializeCollectionScrollbar(collection) {
     thumb.setAttribute("aria-valuetext", `${percent}% scrolled`);
   }
 
+  // Coalesce scroll and ResizeObserver notifications into one update per frame.
   function scheduleUpdate() {
     if (!updateFrame) {
       updateFrame = window.requestAnimationFrame(() => {
@@ -201,6 +220,7 @@ function initializeCollectionScrollbar(collection) {
       scrollToThumbOffset(event.clientX - bounds.left - thumb.getBoundingClientRect().width / 2);
     }
 
+    // Preserve the grab point so dragging does not snap the thumb to its center.
     drag = {
       pointerId: event.pointerId,
       offset: event.clientX - thumb.getBoundingClientRect().left,
@@ -208,6 +228,7 @@ function initializeCollectionScrollbar(collection) {
     };
     track.setAttribute("data-dragging", "");
     thumb.focus({ preventScroll: true });
+    // Continue receiving movement and release events outside the track.
     track.setPointerCapture(event.pointerId);
   });
 
@@ -247,6 +268,8 @@ function initializeCollectionScrollbar(collection) {
     }
   });
 
+  // Responsive CSS can hide the focused thumb before the media-query handler
+  // runs. Remember its focus so synchronize can move focus to a visible control.
   thumb.addEventListener("focus", () => {
     thumbHadFocus = true;
   });
