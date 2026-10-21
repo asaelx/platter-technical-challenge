@@ -6,7 +6,7 @@ The challenge is to recreate the supplied Figma featured collection across deskt
 
 ## My approach
 
-I'm using semantic HTML, Tailwind CSS, and Vanilla JavaScript, with an emphasis on matching the design, keeping the code readable, and making the interactions accessible by keyboard. The implementation will also respect reduced-motion preferences.
+I'm using semantic HTML, Tailwind CSS, and Vanilla JavaScript, with an emphasis on matching the design, keeping the code readable, and making the interactions accessible by keyboard. The implementation respects reduced-motion preferences.
 
 The project is delivered as a static page with generated CSS included. Reviewers can open `index.html` directly in a browser; no installation or build step is required.
 
@@ -15,6 +15,10 @@ The project is delivered as a static page with generated CSS included. Reviewers
 **Live preview:** the review link will be added here.
 
 ## Product images
+
+The collection contains ten products with consistent titles, prices, ratings, and review counts across desktop and mobile. BEST SELLER badges appear on every card; SAVE 15% badges appear on cards 2 and 4. Product and collection links use `#` placeholders.
+
+Each product has two Unsplash placeholder photos, delivered as locally hosted WebP images in 355px and 710px sizes. Related photos may show different models of the same product type. [Photo credits and source links](assets/images/SOURCES.md) are included.
 
 Hovering over a product image shows its secondary photo on hover-capable devices. Moving the pointer away restores the primary photo. Touch-only devices retain the primary image; no tap interaction is needed to change images.
 
@@ -41,3 +45,9 @@ The page uses locally hosted fonts matching the Figma design:
 - [Poppins](https://fonts.google.com/specimen/Poppins): Regular, Medium, and SemiBold for supporting text and controls.
 
 The WOFF2 files and original SIL Open Font License texts are included in [`assets/fonts`](assets/fonts). Bebas Neue and Poppins use the Latin webfont subsets provided by Google Fonts. No external font requests are needed to view the page.
+
+## Verification
+
+Checked in Chrome at 320, 375, 640, 767, 768, 769, 1024, 1280, 1536, and 1920px widths, with additional intermediate resize checks. The review covered layout overflow, product content, hover images, mobile expansion, keyboard and touch-emulated scrolling, focus handling, and reduced motion.
+
+The page and its local assets loaded successfully both by opening the HTML file directly and through a GitHub Pages-style URL path, with no external runtime requests. Regenerating the CSS produced an exact match with the included stylesheet.
