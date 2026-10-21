@@ -1,4 +1,5 @@
 {{ 'platter-featured-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'platter-featured-collection.js' | asset_url }}" type="module"></script>
 
 {% liquid
   assign featured_collection = section.settings.collection
