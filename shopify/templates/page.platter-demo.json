@@ -1,0 +1,15 @@
+{
+  "layout": "platter-demo",
+  "sections": {
+    "featured_collection": {
+      "type": "platter-featured-collection",
+      "settings": {
+        "heading": "Best Sellers",
+        "collection": "best-sellers",
+        "link_label": "Shop All Best Sellers",
+        "product_limit": 10
+      }
+    }
+  },
+  "order": ["featured_collection"]
+}
