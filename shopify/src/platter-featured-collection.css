@@ -1,0 +1,405 @@
+/* Reference Tailwind utilities without emitting its global reset or theme styles. */
+@reference "tailwindcss";
+
+@font-face {
+  font-family: "Platter Source Serif Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./platter-source-serif-pro-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Platter Source Serif Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./platter-source-serif-pro-black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Platter Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./platter-bebas-neue-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Platter Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./platter-poppins-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Platter Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./platter-poppins-medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Platter Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./platter-poppins-semibold.woff2") format("woff2");
+}
+
+@theme inline {
+  --spacing: 0.25rem;
+  --font-sans: "Platter Poppins", Arial, sans-serif;
+  --font-heading: "Platter Source Serif Pro", Georgia, serif;
+  --font-product: "Platter Bebas Neue", Impact, sans-serif;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-ink: #1c1d1d;
+  --color-heading: #231f20;
+  --color-muted: #707070;
+  --color-sale: #5c7962;
+  --color-collection-link: #5c553a;
+  --color-off-white: #fffffa;
+  --color-scrollbar-track: #ddd6d7;
+}
+
+.platter-collection {
+  @apply bg-white font-sans text-ink;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+}
+
+.platter-collection,
+.platter-collection *,
+.platter-collection *::before,
+.platter-collection *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+.platter-collection :is(h2, h3, p, ul) {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.platter-collection ul {
+  list-style: none;
+}
+
+.platter-collection a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.platter-collection button {
+  margin: 0;
+  appearance: none;
+  font: inherit;
+}
+
+.platter-collection :is(img, svg) {
+  display: block;
+  max-width: 100%;
+}
+
+.platter-collection [hidden] {
+  display: none !important;
+}
+
+.platter-collection :is(a, button, [tabindex]):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.platter-collection {
+  --platter-gutter: 24px;
+
+  @apply px-6 py-9 md:px-8 md:pt-20 md:pb-[100px] lg:px-12 xl:px-16 2xl:px-32;
+
+  @variant md {
+    --platter-gutter: 32px;
+  }
+
+  @variant lg {
+    --platter-gutter: 48px;
+  }
+
+  @variant xl {
+    --platter-gutter: 64px;
+  }
+
+  @variant 2xl {
+    --platter-gutter: 128px;
+  }
+}
+
+.platter-collection .platter-collection-header {
+  @apply mb-6 flex items-center justify-between md:mb-9 md:min-h-[52px];
+}
+
+.platter-collection .platter-collection-heading {
+  @apply w-full text-center font-heading text-heading;
+  font-size: 28px;
+  line-height: 1.26;
+  font-weight: 700;
+  letter-spacing: -0.28px;
+  @apply md:w-auto md:text-left;
+  @variant md {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -0.4px;
+  }
+}
+
+.platter-collection .platter-collection-link {
+  @apply hidden shrink-0 items-center justify-center gap-2 rounded-full px-8 py-4;
+  @apply text-collection-link md:inline-flex;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.42px;
+}
+
+.platter-collection .platter-collection-scroll {
+  @apply relative;
+  margin: -6px;
+  padding: 6px;
+
+  @variant md {
+    margin-inline-end: calc(-1 * var(--platter-gutter));
+    padding-inline-end: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+}
+
+.platter-collection .platter-collection-scroll[data-animating] {
+  overflow: hidden;
+}
+
+.platter-collection .platter-collection-scroll[data-custom-scrollbar] {
+  scrollbar-width: none;
+}
+
+.platter-collection .platter-collection-scroll[data-custom-scrollbar]::-webkit-scrollbar {
+  display: none;
+}
+
+.platter-collection .platter-collection-scrollbar {
+  @apply relative mt-7 -mb-5 hidden h-11 touch-none select-none md:block;
+}
+
+.platter-collection .platter-collection-scrollbar::before {
+  @apply absolute inset-x-0 h-1 bg-scrollbar-track;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+}
+
+.platter-collection .platter-collection-scrollbar-thumb {
+  @apply absolute top-0 left-0 h-full cursor-grab rounded-full;
+  width: var(--platter-thumb-width, 100%);
+  transform: translateX(var(--platter-thumb-offset, 0px));
+}
+
+.platter-collection .platter-collection-scrollbar-thumb::before {
+  @apply absolute inset-x-0 h-1 rounded-full bg-heading;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+}
+
+@media (hover: hover) {
+  .platter-collection .platter-collection-scrollbar-thumb:hover::before {
+    height: 6px;
+  }
+}
+
+.platter-collection .platter-collection-scrollbar[data-dragging] .platter-collection-scrollbar-thumb {
+  cursor: grabbing;
+}
+
+.platter-collection .platter-collection-scrollbar[data-dragging] .platter-collection-scrollbar-thumb::before {
+  height: 6px;
+}
+
+.platter-collection .platter-collection-toggle {
+  @apply mt-3 flex h-[54px] w-full cursor-pointer items-center justify-center rounded-full bg-ink px-6 py-4;
+  @apply text-center text-off-white md:hidden;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.48px;
+}
+
+.platter-collection .platter-product-list {
+  @apply grid grid-cols-2 items-start gap-x-[11px] gap-y-3;
+  @apply md:flex md:w-max md:gap-6;
+
+  @variant md {
+    padding-inline-end: var(--platter-gutter);
+  }
+}
+
+.platter-collection .platter-product-item {
+  @apply min-w-0 md:w-[355px] md:flex-none;
+}
+
+.platter-collection .platter-product-card {
+  @apply pb-2 md:pb-4;
+}
+
+.platter-collection .platter-product-link {
+  @apply block rounded-[10px];
+}
+
+.platter-collection .platter-product-media {
+  @apply relative overflow-hidden rounded-[10px];
+  aspect-ratio: 158 / 159;
+
+  @variant md {
+    aspect-ratio: 1;
+  }
+}
+
+.platter-collection .platter-product-image {
+  @apply absolute inset-0 h-full w-full object-cover;
+}
+
+.platter-collection .platter-product-image--secondary {
+  visibility: hidden;
+}
+
+@media (hover: hover) {
+  .platter-collection .platter-product-media:hover .platter-product-image--secondary {
+    visibility: visible;
+  }
+}
+
+.platter-collection .platter-product-badges {
+  @apply absolute inset-x-1 top-1 flex items-start justify-between gap-1 md:top-2 md:right-[27px] md:left-2;
+}
+
+.platter-collection .platter-product-badge {
+  @apply rounded-full bg-white px-2 py-1 text-center font-product whitespace-nowrap text-black;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: 0.32px;
+  @variant md {
+    font-size: 10px;
+    line-height: 0.75rem;
+    letter-spacing: 0.6px;
+  }
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+.platter-collection .platter-product-badge--sale {
+  @apply bg-sale text-off-white;
+}
+
+.platter-collection .platter-product-title {
+  @apply mt-3 min-h-[2.4em] px-2 font-product uppercase;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.48px;
+  @apply md:mt-4 md:min-h-0 md:px-3;
+  @variant md {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+  overflow-wrap: anywhere;
+}
+
+.platter-collection .platter-product-reviews {
+  @apply mt-2 flex flex-wrap items-center gap-x-1 gap-y-1 px-2 text-muted;
+  font-size: 11px;
+  line-height: 1.5;
+  @apply md:px-3;
+  @variant md {
+    font-size: 12px;
+  }
+}
+
+.platter-collection .platter-rating-stars {
+  @apply inline-flex shrink-0 gap-[2px];
+}
+
+.platter-collection .platter-rating-star {
+  --platter-star-icon: url("./platter-star-mobile.svg");
+
+  @apply relative block size-[9px] shrink-0;
+  background-image: var(--platter-star-icon);
+  background-repeat: no-repeat;
+
+  @variant md {
+    --platter-star-icon: url("./platter-star-desktop.svg");
+
+    @apply size-3;
+  }
+}
+
+.platter-collection .platter-rating-star--empty {
+  opacity: 0.25;
+}
+
+.platter-collection .platter-rating-star--half {
+  background-image: none;
+}
+
+.platter-collection .platter-rating-star--half::before,
+.platter-collection .platter-rating-star--half::after {
+  position: absolute;
+  inset: 0;
+  background-image: var(--platter-star-icon);
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.platter-collection .platter-rating-star--half::before {
+  opacity: 0.25;
+}
+
+.platter-collection .platter-rating-star--half::after {
+  clip-path: inset(0 50% 0 0);
+}
+
+.platter-collection .platter-product-price {
+  @apply mt-2 px-2 md:px-3;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.platter-collection .platter-collection-link svg {
+  flex: none;
+}
+
+.platter-collection .platter-product-badge--sale {
+  margin-inline-start: auto;
+}
+
+.platter-collection .platter-product-placeholder {
+  @apply flex h-full items-center justify-center px-2 text-center text-muted;
+  font-size: 14px;
+  background-color: #f5f5f5;
+}
+
+.platter-collection .platter-collection-empty {
+  @apply text-muted;
+  font-size: 14px;
+}
+
+.platter-collection .platter-sr-only {
+  @apply sr-only;
+}
