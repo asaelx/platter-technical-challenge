@@ -12,7 +12,7 @@ The project is delivered as a static page with generated CSS included. Reviewers
 
 ## Review
 
-**Live preview:** the review link will be added here.
+**Live preview:** [View the challenge](https://asaelx.github.io/platter-technical-challenge/).
 
 ## Product images
 
