@@ -8,418 +8,523 @@
     <link rel="stylesheet" href="./assets/styles.css">
     <script src="./assets/main.js" defer></script>
   </head>
-  <body class="bg-white text-[#1c1d1d]">
-    <main class="px-6 py-9">
-      <section aria-labelledby="collection-heading">
-        <header>
-          <h1 id="collection-heading" class="font-heading text-3xl font-bold md:font-black">Best Sellers</h1>
-          <a href="#" class="mt-4 inline-block underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4">Shop All Best Sellers</a>
+  <body class="bg-white text-ink">
+    <main>
+      <section class="collection" aria-labelledby="collection-heading">
+        <header class="collection-header">
+          <h1 id="collection-heading" class="collection-heading">Best Sellers</h1>
+          <a href="#" class="collection-link focus-visible:outline-2 focus-visible:outline-offset-4">
+            <span>Shop All Best Sellers</span>
+            <img src="./assets/icons/arrow-right.svg" width="20" height="20" alt="">
+          </a>
         </header>
-        <ul role="list">
-          <li>
-            <article aria-labelledby="product-headphones-title">
-              <a
-                href="#"
-                aria-labelledby="product-headphones-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/headphones-primary-355.webp"
-                    srcset="./assets/images/headphones-primary-355.webp 355w, ./assets/images/headphones-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="Black over-ear headphones on a yellow background."
-                    loading="eager"
-                    decoding="async"
-                    fetchpriority="high"
-                  >
-                  <img
-                    src="./assets/images/headphones-secondary-355.webp"
-                    srcset="./assets/images/headphones-secondary-355.webp 355w, ./assets/images/headphones-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-headphones-title" class="font-product">Everyday Wireless Headphones Black</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 4.5 out of 5 stars">4.5 / 5</span>
-                <span>1,248 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$89.95</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-sunglasses-title">
-              <a
-                href="#"
-                aria-labelledby="product-sunglasses-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/sunglasses-primary-355.webp"
-                    srcset="./assets/images/sunglasses-primary-355.webp 355w, ./assets/images/sunglasses-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="Black-framed sunglasses with dark lenses on a light background."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/sunglasses-secondary-355.webp"
-                    srcset="./assets/images/sunglasses-secondary-355.webp 355w, ./assets/images/sunglasses-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                  <span class="font-product">SAVE 15%</span>
-                </div>
-                <h2 id="product-sunglasses-title" class="font-product">Weekend Sunglasses Smoke</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 4.0 out of 5 stars">4.0 / 5</span>
-                <span>386 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$39.95</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-sneakers-title">
-              <a
-                href="#"
-                aria-labelledby="product-sneakers-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/sneakers-primary-355.webp"
-                    srcset="./assets/images/sneakers-primary-355.webp 355w, ./assets/images/sneakers-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A rose and cream sneaker suspended by its laces."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/sneakers-secondary-355.webp"
-                    srcset="./assets/images/sneakers-secondary-355.webp 355w, ./assets/images/sneakers-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-sneakers-title" class="font-product">Retro Sneakers Rose</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 5.0 out of 5 stars">5.0 / 5</span>
-                <span>927 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$119.00</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-cap-title">
-              <a
-                href="#"
-                aria-labelledby="product-cap-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/cap-primary-355.webp"
-                    srcset="./assets/images/cap-primary-355.webp 355w, ./assets/images/cap-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A white mesh-back trucker cap on a light background."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/cap-secondary-355.webp"
-                    srcset="./assets/images/cap-secondary-355.webp 355w, ./assets/images/cap-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                  <span class="font-product">SAVE 15%</span>
-                </div>
-                <h2 id="product-cap-title" class="font-product">Everyday Trucker Cap White</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 3.5 out of 5 stars">3.5 / 5</span>
-                <span>214 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$24.95</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-t-shirt-title">
-              <a
-                href="#"
-                aria-labelledby="product-t-shirt-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/t-shirt-primary-355.webp"
-                    srcset="./assets/images/t-shirt-primary-355.webp 355w, ./assets/images/t-shirt-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A plain white T-shirt hanging on a clothing stand."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/t-shirt-secondary-355.webp"
-                    srcset="./assets/images/t-shirt-secondary-355.webp 355w, ./assets/images/t-shirt-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-t-shirt-title" class="font-product">Essential T-Shirt White</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 4.5 out of 5 stars">4.5 / 5</span>
-                <span>673 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$29.00</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-hoodie-title">
-              <a
-                href="#"
-                aria-labelledby="product-hoodie-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/hoodie-primary-355.webp"
-                    srcset="./assets/images/hoodie-primary-355.webp 355w, ./assets/images/hoodie-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="Cream clothing hanging from wooden hangers on a rack."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/hoodie-secondary-355.webp"
-                    srcset="./assets/images/hoodie-secondary-355.webp 355w, ./assets/images/hoodie-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-hoodie-title" class="font-product">Weekend Hoodie Cream</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 4.0 out of 5 stars">4.0 / 5</span>
-                <span>452 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$64.95</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-backpack-title">
-              <a
-                href="#"
-                aria-labelledby="product-backpack-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/backpack-primary-355.webp"
-                    srcset="./assets/images/backpack-primary-355.webp 355w, ./assets/images/backpack-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A brown leather backpack with a zippered front pocket."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/backpack-secondary-355.webp"
-                    srcset="./assets/images/backpack-secondary-355.webp 355w, ./assets/images/backpack-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-backpack-title" class="font-product">Explorer Backpack Brown</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 4.5 out of 5 stars">4.5 / 5</span>
-                <span>819 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$94.00</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-watch-title">
-              <a
-                href="#"
-                aria-labelledby="product-watch-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/watch-primary-355.webp"
-                    srcset="./assets/images/watch-primary-355.webp 355w, ./assets/images/watch-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A silver chronograph watch with a white dial and metal bracelet."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/watch-secondary-355.webp"
-                    srcset="./assets/images/watch-secondary-355.webp 355w, ./assets/images/watch-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-watch-title" class="font-product">Classic Watch Silver</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 4.0 out of 5 stars">4.0 / 5</span>
-                <span>163 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$149.95</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-water-bottle-title">
-              <a
-                href="#"
-                aria-labelledby="product-water-bottle-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/water-bottle-primary-355.webp"
-                    srcset="./assets/images/water-bottle-primary-355.webp 355w, ./assets/images/water-bottle-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A close-up of a clear water bottle with a black and silver lid outdoors."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/water-bottle-secondary-355.webp"
-                    srcset="./assets/images/water-bottle-secondary-355.webp 355w, ./assets/images/water-bottle-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-water-bottle-title" class="font-product">Trail Water Bottle Clear</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 5.0 out of 5 stars">5.0 / 5</span>
-                <span>1,056 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$34.95</p>
-            </article>
-          </li>
-          <li>
-            <article aria-labelledby="product-tote-bag-title">
-              <a
-                href="#"
-                aria-labelledby="product-tote-bag-title"
-                class="block focus-visible:outline-2 focus-visible:outline-offset-4"
-              >
-                <div>
-                  <img
-                    src="./assets/images/tote-bag-primary-355.webp"
-                    srcset="./assets/images/tote-bag-primary-355.webp 355w, ./assets/images/tote-bag-primary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt="A natural canvas tote with coffee-themed text hanging against a white brick wall."
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <img
-                    src="./assets/images/tote-bag-secondary-355.webp"
-                    srcset="./assets/images/tote-bag-secondary-355.webp 355w, ./assets/images/tote-bag-secondary-710.webp 710w"
-                    sizes="355px"
-                    width="355"
-                    height="355"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    hidden
-                  >
-                  <span class="font-product">BEST SELLER</span>
-                </div>
-                <h2 id="product-tote-bag-title" class="font-product">Everyday Tote Natural</h2>
-              </a>
-              <p>
-                <span role="img" aria-label="Rated 3.5 out of 5 stars">3.5 / 5</span>
-                <span>297 Reviews</span>
-              </p>
-              <p><span class="sr-only">Price: </span>$22.00</p>
-            </article>
-          </li>
-        </ul>
+        <div class="collection-scroll" role="region" aria-label="Best-selling products" tabindex="0">
+          <ul class="product-list" role="list">
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-headphones-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-headphones-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/headphones-primary-355.webp"
+                      srcset="./assets/images/headphones-primary-355.webp 355w, ./assets/images/headphones-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="Black over-ear headphones on a yellow background."
+                      loading="eager"
+                      decoding="async"
+                      fetchpriority="high"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/headphones-secondary-355.webp"
+                      srcset="./assets/images/headphones-secondary-355.webp 355w, ./assets/images/headphones-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-headphones-title" class="product-title">Everyday Wireless Headphones Black</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 4.5 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--half" aria-hidden="true"></span>
+                  </span>
+                  <span>1,248 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$89.95</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-sunglasses-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-sunglasses-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/sunglasses-primary-355.webp"
+                      srcset="./assets/images/sunglasses-primary-355.webp 355w, ./assets/images/sunglasses-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="Black-framed sunglasses with dark lenses on a light background."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/sunglasses-secondary-355.webp"
+                      srcset="./assets/images/sunglasses-secondary-355.webp 355w, ./assets/images/sunglasses-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                      <span class="product-badge product-badge--sale">SAVE 15%</span>
+                    </div>
+                  </div>
+                  <h2 id="product-sunglasses-title" class="product-title">Weekend Sunglasses Smoke</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 4.0 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--empty" aria-hidden="true"></span>
+                  </span>
+                  <span>386 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$39.95</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-sneakers-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-sneakers-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/sneakers-primary-355.webp"
+                      srcset="./assets/images/sneakers-primary-355.webp 355w, ./assets/images/sneakers-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A rose and cream sneaker suspended by its laces."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/sneakers-secondary-355.webp"
+                      srcset="./assets/images/sneakers-secondary-355.webp 355w, ./assets/images/sneakers-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-sneakers-title" class="product-title">Retro Sneakers Rose</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 5.0 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                  </span>
+                  <span>927 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$119.00</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-cap-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-cap-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/cap-primary-355.webp"
+                      srcset="./assets/images/cap-primary-355.webp 355w, ./assets/images/cap-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A white mesh-back trucker cap on a light background."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/cap-secondary-355.webp"
+                      srcset="./assets/images/cap-secondary-355.webp 355w, ./assets/images/cap-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                      <span class="product-badge product-badge--sale">SAVE 15%</span>
+                    </div>
+                  </div>
+                  <h2 id="product-cap-title" class="product-title">Everyday Trucker Cap White</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 3.5 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--half" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--empty" aria-hidden="true"></span>
+                  </span>
+                  <span>214 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$24.95</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-t-shirt-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-t-shirt-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/t-shirt-primary-355.webp"
+                      srcset="./assets/images/t-shirt-primary-355.webp 355w, ./assets/images/t-shirt-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A plain white T-shirt hanging on a clothing stand."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/t-shirt-secondary-355.webp"
+                      srcset="./assets/images/t-shirt-secondary-355.webp 355w, ./assets/images/t-shirt-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-t-shirt-title" class="product-title">Essential T-Shirt White</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 4.5 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--half" aria-hidden="true"></span>
+                  </span>
+                  <span>673 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$29.00</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-hoodie-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-hoodie-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/hoodie-primary-355.webp"
+                      srcset="./assets/images/hoodie-primary-355.webp 355w, ./assets/images/hoodie-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="Cream clothing hanging from wooden hangers on a rack."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/hoodie-secondary-355.webp"
+                      srcset="./assets/images/hoodie-secondary-355.webp 355w, ./assets/images/hoodie-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-hoodie-title" class="product-title">Weekend Hoodie Cream</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 4.0 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--empty" aria-hidden="true"></span>
+                  </span>
+                  <span>452 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$64.95</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-backpack-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-backpack-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/backpack-primary-355.webp"
+                      srcset="./assets/images/backpack-primary-355.webp 355w, ./assets/images/backpack-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A brown leather backpack with a zippered front pocket."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/backpack-secondary-355.webp"
+                      srcset="./assets/images/backpack-secondary-355.webp 355w, ./assets/images/backpack-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-backpack-title" class="product-title">Explorer Backpack Brown</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 4.5 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--half" aria-hidden="true"></span>
+                  </span>
+                  <span>819 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$94.00</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-watch-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-watch-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/watch-primary-355.webp"
+                      srcset="./assets/images/watch-primary-355.webp 355w, ./assets/images/watch-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A silver chronograph watch with a white dial and metal bracelet."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/watch-secondary-355.webp"
+                      srcset="./assets/images/watch-secondary-355.webp 355w, ./assets/images/watch-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-watch-title" class="product-title">Classic Watch Silver</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 4.0 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--empty" aria-hidden="true"></span>
+                  </span>
+                  <span>163 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$149.95</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-water-bottle-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-water-bottle-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/water-bottle-primary-355.webp"
+                      srcset="./assets/images/water-bottle-primary-355.webp 355w, ./assets/images/water-bottle-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A close-up of a clear water bottle with a black and silver lid outdoors."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/water-bottle-secondary-355.webp"
+                      srcset="./assets/images/water-bottle-secondary-355.webp 355w, ./assets/images/water-bottle-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-water-bottle-title" class="product-title">Trail Water Bottle Clear</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 5.0 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                  </span>
+                  <span>1,056 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$34.95</p>
+              </article>
+            </li>
+            <li class="product-item">
+              <article class="product-card" aria-labelledby="product-tote-bag-title">
+                <a
+                  href="#"
+                  aria-labelledby="product-tote-bag-title"
+                  class="product-link focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  <div class="product-media">
+                    <img
+                      class="product-image"
+                      src="./assets/images/tote-bag-primary-355.webp"
+                      srcset="./assets/images/tote-bag-primary-355.webp 355w, ./assets/images/tote-bag-primary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt="A natural canvas tote with coffee-themed text hanging against a white brick wall."
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <img
+                      class="product-image"
+                      src="./assets/images/tote-bag-secondary-355.webp"
+                      srcset="./assets/images/tote-bag-secondary-355.webp 355w, ./assets/images/tote-bag-secondary-710.webp 710w"
+                      sizes="(min-width: 48rem) 355px, calc((100vw - 59px) / 2)"
+                      width="355"
+                      height="355"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      hidden
+                    >
+                    <div class="product-badges">
+                      <span class="product-badge">BEST SELLER</span>
+                    </div>
+                  </div>
+                  <h2 id="product-tote-bag-title" class="product-title">Everyday Tote Natural</h2>
+                </a>
+                <p class="product-reviews">
+                  <span class="rating-stars" role="img" aria-label="Rated 3.5 out of 5 stars">
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--half" aria-hidden="true"></span>
+                    <span class="rating-star rating-star--empty" aria-hidden="true"></span>
+                  </span>
+                  <span>297 Reviews</span>
+                </p>
+                <p class="product-price"><span class="sr-only">Price: </span>$22.00</p>
+              </article>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
   </body>
