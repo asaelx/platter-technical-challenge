@@ -87,6 +87,10 @@ The section schema exposes four controls in Shopify's theme editor:
 | Collection link label | Shop All Best Sellers. |
 | Maximum products | Ten by default; adjustable from four to twenty. |
 
+The theme editor shows these schema inputs alongside the collection preview. Reviewers can inspect the configuration below without Shopify admin access.
+
+![Shopify theme editor showing the Platter collection's heading, collection picker, collection link label, and maximum products inputs alongside the mobile preview](assets/screenshots/shopify-schema.png)
+
 ### Catalog and merchandising rules
 
 Titles, product links, images, and prices come from Shopify rather than duplicated card markup. Product links open the selected or first available variant; the collection link opens the selected collection. The demo catalog uses USD and the same sample content and Unsplash photos as the HTML version. Shopify serves responsive product images through its CDN.
