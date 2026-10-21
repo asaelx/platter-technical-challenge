@@ -148,6 +148,16 @@
     @apply absolute inset-0 h-full w-full object-cover;
   }
 
+  .product-image--secondary {
+    visibility: hidden;
+  }
+
+  @media (hover: hover) {
+    .product-media:hover .product-image--secondary {
+      visibility: visible;
+    }
+  }
+
   .product-badges {
     @apply absolute inset-x-1 top-1 flex items-start justify-between gap-1 md:top-2 md:right-[27px] md:left-2;
   }

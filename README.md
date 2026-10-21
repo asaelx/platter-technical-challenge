@@ -14,6 +14,10 @@ The project is delivered as a static page with generated CSS included. Reviewers
 
 **Live preview:** the review link will be added here.
 
+## Product images
+
+Hovering over a product image shows its secondary photo on hover-capable devices. Moving the pointer away restores the primary photo. Touch-only devices retain the primary image; no tap interaction is needed to change images.
+
 ## Fonts
 
 The page uses locally hosted fonts matching the Figma design:
