@@ -4,6 +4,8 @@
 
 **Shopify bonus:** [View the demo store](https://platter-challenge-demo.myshopify.com/pages/platter-challenge-demo?preview_theme_id=186312655071&view=platter-demo). Storefront password: `sheuts`.
 
+**After entering the password:** Shopify may redirect you to the store homepage. Click [View the demo store](https://platter-challenge-demo.myshopify.com/pages/platter-challenge-demo?preview_theme_id=186312655071&view=platter-demo) again to open the collection demo in the preview theme.
+
 I'm Asael Chavez, and this project is my submission for the technical challenge as part of my application to Platter.
 
 The challenge is to recreate the supplied Figma featured collection across desktop and mobile, including product cards, secondary images on hover, mobile expansion, and a horizontal collection scrollbar.
