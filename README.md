@@ -14,6 +14,26 @@ The project is delivered as a static page with generated CSS included. Reviewers
 
 **Live preview:** [View the challenge](https://asaelx.github.io/platter-technical-challenge/).
 
+## Challenge checklist
+
+- [x] Recreate the supplied design, with the approved product content and image substitutions.
+- [x] Include at least ten product cards.
+- [x] Initially show only the first four products on mobile.
+- [x] Provide a mobile-only Show More button that smoothly reveals the remaining six products.
+- [x] Swap to a secondary product image on hover-capable devices.
+- [x] Use free Unsplash stock images as placeholders.
+- [x] Build with HTML, Tailwind CSS, and JavaScript.
+- [x] Use well-structured, semantic HTML.
+- [x] Use plain Vanilla JavaScript for functionality.
+- [x] Make the layout responsive across desktop and mobile.
+- [x] Increase the scrollbar thumb to 6px on hover or touch.
+- [x] Create a Git repository with meaningful commits showing the development process.
+- [x] Provide the [completed GitHub repository](https://github.com/asaelx/platter-technical-challenge).
+- [x] Provide a [pure HTML live preview](https://asaelx.github.io/platter-technical-challenge/).
+- [x] Require no installation or local build step to review the final result.
+- [ ] Optional bonus: migrate to a Shopify section using Liquid and a schema input, with a development store or mockup. Deferred to prioritize the HTML submission.
+- [ ] Conditional bonus delivery: provide a dev/demo store preview if the Shopify bonus is completed. Not applicable to this submission.
+
 ## Product images
 
 The collection contains ten products with consistent titles, prices, ratings, and review counts across desktop and mobile. BEST SELLER badges appear on every card; SAVE 15% badges appear on cards 2 and 4. Product and collection links use `#` placeholders.
