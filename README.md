@@ -2,6 +2,8 @@
 
 **Live preview:** [View the challenge](https://asaelx.github.io/platter-technical-challenge/).
 
+**Shopify bonus:** [View the demo store](https://platter-challenge-demo.myshopify.com/pages/platter-challenge-demo?preview_theme_id=186312655071&view=platter-demo). Storefront password: `sheuts`.
+
 I'm Asael Chavez, and this project is my submission for the technical challenge as part of my application to Platter.
 
 The challenge is to recreate the supplied Figma featured collection across desktop and mobile, including product cards, secondary images on hover, mobile expansion, and a horizontal collection scrollbar.
@@ -44,9 +46,9 @@ In a production project, I would confirm content discrepancies and promotion rul
 
 ### Product data in a production store
 
-This submission uses static sample content to keep the HTML challenge self-contained. For a real storefront, I would render titles, product URLs, images, and prices from the commerce platform, such as Shopify, or a product API. Ratings and review counts would come from the connected review provider. The same underlying product data would serve every layout.
+The HTML version uses static sample content to keep the main challenge self-contained. For a real storefront, I would render titles, product URLs, images, and prices from the commerce platform, such as Shopify, or a product API. Ratings and review counts would come from the connected review provider. The same underlying product data would serve every layout. The Shopify bonus below demonstrates rendering from a store catalog with sample products.
 
-Sale labels would follow actual pricing and promotion rules, including the applicable variant and currency; best-seller labels would follow the merchant's merchandising criteria. Placeholder values and badges here demonstrate presentation rather than a connection to a live catalog. Primary and secondary photos would belong to the same real product, with appropriate image alternatives and responsive sizes.
+Sale labels would follow actual pricing and promotion rules, including the applicable variant and currency; best-seller labels would follow the merchant's merchandising criteria. The HTML version's placeholder values and badges demonstrate presentation without a catalog connection; the Shopify bonus applies these rules to its sample catalog. Primary and secondary photos in production would belong to the same real product, with appropriate image alternatives and responsive sizes.
 
 ## Challenge checklist
 
@@ -65,12 +67,47 @@ Sale labels would follow actual pricing and promotion rules, including the appli
 - [x] Provide the [completed GitHub repository](https://github.com/asaelx/platter-technical-challenge).
 - [x] Provide a [pure HTML live preview](https://asaelx.github.io/platter-technical-challenge/).
 - [x] Require no installation or local build step to review the final result.
-- [ ] Optional bonus: migrate to a Shopify section using Liquid and a schema input, with a development store or mockup. Deferred to prioritize the HTML submission.
-- [ ] Conditional bonus delivery: provide a dev/demo store preview if the Shopify bonus is completed. Not applicable to this submission.
+- [x] Optional bonus: migrate to a Shopify section using Liquid and schema inputs on a development store.
+- [x] Provide a [Shopify demo preview](https://platter-challenge-demo.myshopify.com/pages/platter-challenge-demo?preview_theme_id=186312655071&view=platter-demo), with storefront password `sheuts`.
+
+## Shopify bonus
+
+I migrated the collection into a configurable [Liquid section](https://github.com/asaelx/platter-technical-challenge/blob/feat/shopify-section/shopify/sections/platter-featured-collection.liquid), with a reusable [product card snippet](https://github.com/asaelx/platter-technical-challenge/blob/feat/shopify-section/shopify/snippets/platter-product-card.liquid). The Shopify implementation lives in [`shopify` on the Shopify branch](https://github.com/asaelx/platter-technical-challenge/tree/feat/shopify-section/shopify), preserving the independent HTML submission and its hosted preview.
+
+The demo uses an unpublished **Platter Challenge Preview** theme. Its dedicated `platter-demo` page template displays the collection alone, without the surrounding Horizon header and footer, so reviewers can compare it with the HTML version. This template is for demonstration purposes; the section can also be placed within a regular storefront layout. The preview link selects the unpublished theme and template explicitly. Shopify requires password protection on this development store; enter `sheuts` to view it. This is a storefront viewing password, not an admin credential.
+
+### Merchant settings
+
+The section schema exposes four controls in Shopify's theme editor:
+
+| Setting | Demo configuration |
+| --- | --- |
+| Heading | Best Sellers; a blank heading falls back to the collection title. |
+| Collection | Best Sellers, with ten products in the same order as the HTML demo. |
+| Collection link label | Shop All Best Sellers. |
+| Maximum products | Ten by default; adjustable from four to twenty. |
+
+The theme editor shows these schema inputs alongside the collection preview. Reviewers can inspect the configuration below without Shopify admin access.
+
+![Shopify theme editor showing the Platter collection's heading, collection picker, collection link label, and maximum products inputs alongside the mobile preview](assets/screenshots/shopify-schema.png)
+
+### Catalog and merchandising rules
+
+Titles, product links, images, and prices come from Shopify rather than duplicated card markup. Product links open the selected or first available variant; the collection link opens the selected collection. The demo catalog uses USD and the same sample content and Unsplash photos as the HTML version. Shopify serves responsive product images through its CDN.
+
+Prices and savings use the same variant. A SAVE badge appears only when its compare-at price exceeds its price, with the percentage calculated and rounded in Liquid. The sunglasses and cap have compare-at prices that produce SAVE 15%. BEST SELLER is controlled by the Boolean product metafield `custom.best_seller`, enabled for all ten demo products.
+
+Ratings and review counts use the `custom.demo_rating` rating metafield and `custom.demo_review_count` integer metafield. These are sample values, not collected customer reviews. Stars display half-star increments, and missing ratings omit the review row. In production, a review provider would supply this data.
+
+### Presentation and verification
+
+The section retains the HTML version's responsive layout, hover-only secondary images, mobile Show More / Show Less, keyboard controls, and reduced-motion handling. Styles and font names are scoped to avoid changing the host theme. Each section instance manages its own interactions and cleans up listeners and observers when Shopify's theme editor unloads it. Empty collections and missing images have explicit fallback content.
+
+The actual development-store preview was checked at 320, 375, 640, 767, 768, 769, 1024, 1280, 1536, and 1920px widths. Checks confirmed no page-level horizontal overflow, the four-product mobile state, expansion and collapse, keyboard scrolling, catalog values, and all twenty product images. The theme editor displayed all four schema controls and the mobile preview. Local checks also covered reduced motion, scrolling input methods, multiple section instances, and editor lifecycle handling. Shopify Theme Check reported no findings for the isolated section package, and the uploaded files matched the committed implementation.
 
 ## Product images
 
-The collection contains ten products with consistent titles, prices, ratings, and review counts across desktop and mobile. BEST SELLER badges appear on every card; SAVE 15% badges appear on cards 2 and 4. Product and collection links use `#` placeholders.
+The collection contains ten products with consistent titles, prices, ratings, and review counts across desktop and mobile. BEST SELLER badges appear on every card; SAVE 15% badges appear on cards 2 and 4. In the HTML version, product and collection links use `#` placeholders.
 
 Each product has two Unsplash placeholder photos, delivered as locally hosted WebP images in 355px and 710px sizes. Related photos may show different models of the same product type. [Photo credits and source links](assets/images/SOURCES.md) are included.
 
